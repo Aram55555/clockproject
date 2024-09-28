@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(32, 32, 70);
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+#calendar {
+    width: 100%;
+    max-width: 500px;
+    height: 550px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: rgb(133, 138, 161);
+    box-shadow: 10px 5px 10px 1px rgb(255, 248, 248);
+}
+
+#calendar #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    color: #ececec
+}
+
+#calendar #header #month {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#calendar #header #btns {
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+#calendar #header #btns .btn {
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: #fff;
+    background: #f90a39;
+    font-size: 16px;
+    cursor: pointer;
+    transform: all 1s;
+}
+
+
+#calendar #header #btns .btn button {
+    /* text-align: center; */
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-left: 17px;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#calendar #header #btns .btn .btn-today {
+    padding: 9px 7px 7px 7px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+#calendar #header #btns .btn:hover {
+    background: #db0933;
+    transform: scale(1.05)
+}
+
+.weekend {
+    display: flex;
+    /* justify-content: center; */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.weekend .day {
+    width: calc(100% /7 - 10px);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(84, 84, 88);
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.days .day {
+    width: calc(100%/7 - 10px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    background: #fff;
+    transform: all 1.5s;
+    color: rgb(66, 51, 94);
+}
+
+.days .day:not(.next):not(.prev):hover {
+    color: #fff;
+    background: #f90a39;
+    transform: scale(1.05);
+}
+
+.days .today {
+    color: #fff;
+    background: #f90a39;
+}
+
+.days .prev,
+.days .next {
+    color: #ccc;
+
+}
+
+.jamer {
+    display: flex;
+    /* background: rgb(105, 105, 199); */
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.jamer p {
+    font-size: 80px;
+    font-weight: 500px;
+    color: white;
+}
+
+.tvayin {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: start;
+    /* background-color: rgba(46, 22, 151, 0.945); */
+    border-radius: 100%;
+    /* border: 0.5px solid white; */
+    box-shadow: 5px 7px 15px;
+
+}
+
+.analog {
+    margin: auto 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgb(53, 50, 50);
+    box-shadow: 2px 1px 20px 7px white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.analog span {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--1)));
+    inset: 12px;
+    text-align: center;
+    color: white;
+}
+
+.analog span b {
+    transform: rotate(calc(-30deg * var(--1)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.analog::before {
+   content: "";  
+   position: absolute;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+   border: 1px solid black; 
+   z-index: 2; 
+}
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i {
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 20px black;
+}
+
+
+.analog .second i {
+    height: 95px;
+background-color: #f90a39;
+}
+
+.analog .minute i {
+    height: 80px;
+    background-color: white;
+}
